@@ -1,10 +1,10 @@
 import xml.etree.ElementTree as ET
 import sqlite3
 
-tree = ET.parse('bioinformatics_posts_se.xml')
+tree = ET.parse('./other/bioinformatics_posts_se.xml')
 root = tree.getroot()
 
-conn = sqlite3.connect('../db.sqlite3')
+conn = sqlite3.connect('./db.sqlite3')
 cursor = conn.cursor()
 
 

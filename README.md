@@ -8,6 +8,11 @@ This is a minimal django app, to satisfy the conditions given in [Selection Test
 - **posts**: reusable django app that display posts
 - **other**: contains python code to injest given xml data into db.sqlite3
 
+## Dependency
+- sqlite3
+- sqlite3-dev
+- python3
+
 ## To achieve result of tests
 
 - `$ git clone https://github.com/AkashDhiman/django-app.git`
@@ -16,13 +21,14 @@ This is a minimal django app, to satisfy the conditions given in [Selection Test
 - `$ python3 manage.py migrate`
 - `$ python3 other/xml-to-sqlite.py`
 - `$ python3 manage.py runserver`
-- now head over to 127.0.0.1:8000/posts/ to see list of posts
+- now head over to `127.0.0.1:8000/posts/` to see list of posts
 - you may click on any of the post to view them in detail
 - you can also search using the options provided on the same page.
 - These search parameter work with GET request the parameters being
   - order = [creation-date, score, view-count]
   - body = [search string for body]
   - title = [search string for title]
+
 
 ## Other Information
 
