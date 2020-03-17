@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Django App</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'posts/index.css' %}">
+  
 </head>
 <body>
      <h1 class="header"> Posts</h1>
@@ -35,16 +40,14 @@
     <div class="container">
         {% for post in posts %}
         <hr />
-        <div class="post"><a href="{% url 'view' post.id %}">{{post.title}}</a></div>
-        <div class="metadata">
-            <ul>
+        <div class="title"><a href="{% url 'view' post.id %}">{{post.title}}</a></div>
+            <ul class="metadata">
                 <li>Creation Date: {{post.creationDate}}</li>
                 <li>Score: {{post.score}}</li>
                 <li>View Count: {{post.viewCount}}</li>
                 <li>Favorites: {{post.favoriteCount}}</li>
                 <li>Answers: {{post.answerCount}}</li>
             </ul>
-        </div>
         <div class="content">{{post.body}}</div>
         {% endfor %}
     </div>

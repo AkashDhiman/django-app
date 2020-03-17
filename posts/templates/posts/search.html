@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Django App</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'posts/search.css' %}">
 </head>
 <body>
-    <h1>Posts</h1>
+    <h1 class="header">Posts</h1>
     <hr />
     <form action="{% url 'index' %}" method="get">
           <label for="title">Search Title: </label><br>

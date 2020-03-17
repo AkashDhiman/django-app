@@ -7,7 +7,7 @@ from bleach.sanitizer import Cleaner
 from .models import Post
 
 VALID_TAGS = ['img', 'p', 'strike', 'br',
-              'span', 'blockquote', 'pre'] + ALLOWED_TAGS
+              'span', 'blockquote', 'pre', 'hr'] + ALLOWED_TAGS
 
 VALID_ATTR = ALLOWED_ATTRIBUTES
 VALID_ATTR['img'] = ['src', 'alt', 'rel']
@@ -50,6 +50,15 @@ def view(req, post_id):
     question.body = mark_safe(cleaner.clean(question.body))
     question.title = mark_safe(cleaner.clean(question.title))
     answers = list(Post.objects.filter(parentId=post_id))
+    if question.acceptedAnswerId != None:
+        for i, answer in enumerate(answers):
+            if question.acceptedAnswerId == answer.id:
+                ans = answer
+                ans_i = i
+                break
+        answers.pop(i)
+        answers.insert(0, ans)
+
     for i, answer in enumerate(answers):
         answers[i].body = mark_safe(cleaner.clean(answers[i].body))
 
