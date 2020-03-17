@@ -67,6 +67,7 @@ def view(req, post_id):
     })
 
 
+# additional view, to perform search independently
 def search(req):
     title = req.GET.get('title', '')
     body = req.GET.get('body', '')
