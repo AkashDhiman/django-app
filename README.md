@@ -10,7 +10,7 @@ This is a minimal django app, to satisfy the conditions given in [Selection Test
 
 ## Dependency
 - sqlite3
-- sqlite3-dev
+- libsqlite3-dev
 - python3
 
 ## To achieve result of tests
