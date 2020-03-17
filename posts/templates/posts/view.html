@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Django App</title>
+</head>
+<body>
+    <h1 class="header"> Posts </h1>
+    <div class="question-block">
+        <div class="title">{{question.title}}</div>
+        <div class="metadata">
+            <ul>
+                <li>Score: {{question.score}}</li>
+                <li>View Count: {{question.viewCount}}</li>
+                <li>Favorites: {{question.favoriteCount}}</li>
+                <li>Answers: {{question.answerCount}}</li></li>
+            </ul>
+        </div>
+        <div class="ques-body">{{question.body}}</div>
+    </div>
+    <div class="answers">
+        {%if answers %}
+        <h1>Answers</h1>
+            {% for answer in answers %}
+            <div class="answer">{{answer.body}}</div>
+            {% endfor %}
+        {%else%}
+        <h1>No Answer Available</h1>
+      {%endif%}
+    </div>
+</body>
+</html>
