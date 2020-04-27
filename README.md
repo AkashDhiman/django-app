@@ -1,7 +1,6 @@
 # Information
 
-This is a minimal django app, to satisfy the conditions given in [Selection Tests of Canadian Centre for Computational Genomics](https://bitbucket.org/mugqic/gsoc_2020/src/master/)
-
+This is a minimal django app, replicating stack exchange
 ## Files and Directory Structure
 
 - **website**: main django project directory
@@ -13,7 +12,7 @@ This is a minimal django app, to satisfy the conditions given in [Selection Test
 - libsqlite3-dev
 - python3
 
-## To achieve result of tests
+## Setup
 
 - `$ git clone https://github.com/AkashDhiman/django-app.git`
 - `$ cd django-app`
@@ -31,8 +30,5 @@ This is a minimal django app, to satisfy the conditions given in [Selection Test
 
 
 ## Other Information
-
-- test 1 is completed with the execution of code other/xml-to-sqlite.py
-- test 2 and 3's result can be seen while running the server and visiting `127.0.0.1:8000/posts/`
 - The code has been design to avoid xss attack by using bleach, during rendering of html content
 - /posts/search/ is another url that provides search functionality, it works by redirecting to index and doesn't display the posts
